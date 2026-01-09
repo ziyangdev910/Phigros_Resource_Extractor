@@ -7,5 +7,6 @@ phira/
 info/
 font/
 __pycache__/
+.vscode/
 info.xlsx
 config.ini
