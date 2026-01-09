@@ -1,0 +1,11 @@
+.venv/
+avatar/
+chart/
+illustration/
+music/
+phira/
+info/
+font/
+__pycache__/
+info.xlsx
+config.ini
