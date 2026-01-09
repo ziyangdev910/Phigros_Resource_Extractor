@@ -1,3 +1,12 @@
+# 原始代码版权信息
+# Copyright (C) 2025 7aGiven
+# 
+# 此代码基于Phigros_Resource修改而来，该项目遵循GNU通用公共许可证v3.0
+# 本程序是自由软件：您可以在自由软件基金会发布的GNU通用公共许可证v3.0条款下重新分发和/或修改它
+# 
+# 修改者：ziyangdev910
+# 修改日期：2026-01-09
+
 import os
 import shutil
 from zipfile import ZipFile, BadZipFile
