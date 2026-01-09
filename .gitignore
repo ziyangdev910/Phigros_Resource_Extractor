@@ -6,7 +6,10 @@ music/
 phira/
 info/
 font/
+build/
+dist/
 __pycache__/
 .vscode/
 info.xlsx
 config.ini
+main.spec
