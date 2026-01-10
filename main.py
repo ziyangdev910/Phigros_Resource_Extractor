@@ -97,7 +97,7 @@ def convert_to_mp3(folder_path):
         audio_clip.write_audiofile(str(file)[:-4] + '.mp3')
 
         os.remove(file)
-        print(f'{file}已删除')
+        # print(f'{file}已删除\n')
 
 
 
@@ -123,6 +123,7 @@ def main():
 
     print('准备开始提取操作，可能花费较长时间，请耐心等待...')
     time.sleep(3)
+    start_time = time.time()
     
     print('\n\n开始提取曲目各种数据...')
     time.sleep(1)
@@ -155,12 +156,16 @@ def main():
     time.sleep(1)
     convert_to_mp3('music')
 
-    print('\n\n全部完成！\n\n')
+    print('\n\n全部完成！', end='')
+    current_time = time.time()
+    print(f'用时{int((current_time - start_time) // 60)}分' \
+          f'{int(round((current_time - start_time) % 60, 0))}秒\n\n')
     time.sleep(1)
     print('说明：info.xlsx为所有曲目信息；\n' \
-    'illustration文件夹中为全部高清曲绘；\n' \
     'avatar文件夹中为全部头像；\n' \
-    'chart文件夹中为全部谱面的源文件；\n' \
+    'chart文件夹中为全部谱面的json源文件；\n' \
+    'illustration文件夹中为全部高清曲绘；\n' \
+    'info文件夹中为曲目信息的源文件；' \
     'music文件夹中为全部曲目的mp3音频；\n' \
     'phira文件夹中为全部曲目所有难度的提取谱文件，可以导入phira。')
     input('按回车键退出...')
@@ -170,8 +175,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-
-    # root_dir = os.path.dirname(os.path.abspath(__file__))
-    # create_table(root_dir)
-
-    # convert_to_mp3('music')

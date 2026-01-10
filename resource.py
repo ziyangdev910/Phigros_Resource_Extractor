@@ -5,17 +5,15 @@
 # 本程序是自由软件：您可以在自由软件基金会发布的GNU通用公共许可证v3.0条款下重新分发和/或修改它
 # 
 # 修改者：ziyangdev910
-# 修改日期：2026-01-09
+# 修改日期：2026-01-10
 
 import base64
 from concurrent.futures import ThreadPoolExecutor
 from configparser import ConfigParser
-import gc
 from io import BytesIO
 import json
 import os
 from queue import Queue
-import shutil
 import sys
 import threading
 import time
@@ -202,7 +200,7 @@ def run(path, config):
                 save(ikey, ientry, config)
     queue_in.put(None)
     thread.join()
-    print("%f秒" % round(time.time() - ti, 4))
+    # print("%f秒" % round(time.time() - ti, 4))
 
 
 if __name__ == "__main__":
