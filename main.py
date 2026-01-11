@@ -93,8 +93,13 @@ def create_table(root_dir):
 def convert_to_mp3(folder_path):
     path = Path(folder_path)
     for file in path.glob('*.ogg'):
-        audio_clip = AudioFileClip(file)
-        audio_clip.write_audiofile(str(file)[:-4] + '.mp3')
+
+        # 已经存在的mp3音频不再转换
+        if os.path.exists(str(file)[:-4] + '.mp3'):
+            print(f'文件{str(file)[:-4] + '.mp3'}已存在，不再转换')
+        else:
+            audio_clip = AudioFileClip(file)
+            audio_clip.write_audiofile(str(file)[:-4] + '.mp3')
 
         os.remove(file)
         # print(f'{file}已删除\n')
@@ -167,7 +172,7 @@ def main():
     'illustration文件夹中为全部高清曲绘；\n' \
     'info文件夹中为曲目信息的源文件；' \
     'music文件夹中为全部曲目的mp3音频；\n' \
-    'phira文件夹中为全部曲目所有难度的提取谱文件，可以导入phira。')
+    'phira文件夹中为全部曲目所有难度的提取谱文件，可以导入phira。\n\n')
     input('按回车键退出...')
     exit()
 
